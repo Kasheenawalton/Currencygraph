@@ -1,0 +1,14 @@
+h1 {
+    text-align: center;
+    font-size: 45pt;
+    margin-bottom: 0;
+}
+body {
+    font-family: 'Poor Story', cursive;
+    font-weight: bold;
+    background: linear-gradient(to top right, darkgray, black);
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+    text-shadow: 0 0 1px black;
+}

@@ -1,0 +1,77 @@
+.graph {
+    display: grid;
+    grid: repeat(10, auto) max-content / max-content repeat(5, auto);
+    height: 100%;
+}
+/* graph bars */
+.graphBar {
+    grid-row: 1 / -2;
+    border-radius: 0 0 50% 50% / 0 0 10px 10px;
+    background: gray
+        linear-gradient(to top, white (--h), transparent var(--h));
+    justify-self: center;
+    width: 45px;
+    height: 100%;
+    box-shadow: 0 0 3px black;
+    transition: 4s;
+}
+
+.graphBar:hover {
+    background: black
+}
+
+.graphBar:nth-of-type(1) {
+    grid-column: 2;
+    --h: 95%;
+}
+
+.graphBar:nth-of-type(2) {
+    grid-column: 3;
+    --h: 87%;
+}
+.graphBar:nth-of-type(3) {
+    grid-column: 4;
+    --h: 76%;
+}
+.graphBar:nth-of-type(4) {
+    grid-column: 5;
+    --h: 100%;
+}
+.graphBar:nth-of-type(5) {
+    grid-column: 6;
+    --h: 100%;
+}
+/* graph bar edges */
+.graphBar::before,
+.graphBar::after {
+    display: block;
+    content: "";
+    height: 20px;
+    border-radius: 50% / 10px;
+}
+.graphBar::before {
+    margin-top: -10px;
+    background-color: gray;
+}
+.graphBar::after {
+    background-color: lightgray;
+    position: relative;
+    top: calc(100% - var(--h) - 20px);
+}
+/* graph  labels */
+.graphRowLabel {
+    margin-top: -0.5em;
+}
+.graphColumnLabel {
+    justify-self: center;
+    margin-top: 6px;
+    text-shadow: 0 0 2px black;
+    font-size: 20pt;
+}
+.graphRowLabel::after {
+    display: inline-block;
+    content: "\2000\2000\2014";
+}
+.graphRowLabel:nth-of-type(1)::after {
+    content: "\2000\2014";
+}

@@ -1,0 +1,1 @@
+This is a graph that reflects the current rates of the currency around the world.
