@@ -5,23 +5,36 @@ import Bargraph from './components/Bargraph/Bargraph.js';
 import Currencyselector from './components/Currencyselector/Currencyselector.js';
 import Form from './components/Form/Form.js';
 
+
 class App extends Component {
     state = {
         isLoading: false,
         apiData: [],
         results: [],
-        rates: {}
+        rates: {},
     }
 
-    onClick = () => {
-        console.log('Got Clicked!', this.state.rates);
+    render() {
+        return (
+            <div className="graph">
+                {
+                    this.rateKeys().map(countryCode => (
+                        <div className="graph" style={{ height: this.state.rates[countryCode] + "%" }}>
+                            <div className="Tooltiptext">
+                                <span class="tooltiptext"></span>
+                                {countryCode}{this.state.rates[countryCode]}
+                            </div>
+                        </div>
+                    ))
+                }
 
-        this.setState({
-            isLoading: true,
-            apiData: [],
-            results: [],
-            rates: {}
-        });
+                <Currencyselector />
+                <Bargraph />
+                <Form />
+
+            </div>
+
+        );
     }
 
     componentDidMount() {
@@ -37,25 +50,8 @@ class App extends Component {
             })
     }
 
-
     rateKeys() {
         return Object.keys(this.state.rates);
-    }
-
-
-    render() {
-        return (
-            <div className="graph">
-                {
-                    this.rateKeys().map(countryCode => (
-                        <div class="graph" style={{ height: this.state.rates[countryCode] + "%" }}>
-                            {countryCode}{this.state.rates[countryCode]}
-                        </div>
-                    ))
-                }
-            </div>
-
-        );
     }
 }
 

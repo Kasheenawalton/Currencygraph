@@ -4,7 +4,7 @@ import './Currencyselector.css';
 class Currencyselector extends Component {
     render() {
         return (
-            <div class="CurrencySelector">
+            <div class="Container">
             <label>
                  Currencies:
              <select multiple>
@@ -42,6 +42,7 @@ class Currencyselector extends Component {
                  <option>USD</option>
                  <option>ZAR</option>
              </select>
+             <button type="button">Submit</button>
              <label>Select up to 5</label>
             </label>
          </div>

@@ -1,3 +1,7 @@
+select {
+    height: 150px;
+    width: 150px;
+}
 .CurrencySelector {
     height: 175px;
     width: 150px;
@@ -6,8 +10,12 @@
     border-width: 3px;
     font-size: 20pt;
 }
-
-select {
-    height: 100px;
-    width: 100px;
+.button {
+    border-radius: 50%;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }

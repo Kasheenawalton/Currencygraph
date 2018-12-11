@@ -4,9 +4,9 @@ import './Form.css';
 class Form extends Component {
     render() {
         return ( 
-            <div className="TitleBar">
-                <h1>Currency Exchange</h1>
-            </div>
+             <nav className="Navigation">
+                 <h1></h1>
+             </nav>
         );
     }
 }
